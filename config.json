@@ -1,0 +1,6 @@
+{
+    "db":
+    {
+        "connection_string":"Driver={SQL Server};Server=34.195.113.52;Database=CERT_Golden;uid=soporte;pwd=soporte"
+    }
+}
