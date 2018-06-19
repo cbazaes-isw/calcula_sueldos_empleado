@@ -1,4 +1,5 @@
-class linea_funcion():
+class linea_funcion(object):
+
     def __init__(self, db):
         self.id = db["IDFormula"]
         self.linea = db["Linea"]
@@ -32,7 +33,7 @@ class linea_funcion():
         # self.ParaHis3 = db.ParaHis3
     
     def __repr__(self):
-        globals()[self.sentencia](self)
+        return self.methods[self.sentencia](self)
 
     def ETI(self):
         """
@@ -117,3 +118,13 @@ class linea_funcion():
 
         sentencia = "if {param1} {operador} {param2}:".format(param1=param1, param2=param2, operador=operador)
         return sentencia
+
+    methods = {
+        "ETI":ETI,
+        "FIN":FIN,
+        "HAC":HAC,
+        "IRA":IRA,
+        "NUL":NUL,
+        "SAL":SAL,
+        "SI":SI
+    }
